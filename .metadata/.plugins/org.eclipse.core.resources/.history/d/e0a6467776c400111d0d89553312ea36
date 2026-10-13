@@ -1,0 +1,5 @@
+package in.example.controller;
+
+public class StudentController {
+
+}

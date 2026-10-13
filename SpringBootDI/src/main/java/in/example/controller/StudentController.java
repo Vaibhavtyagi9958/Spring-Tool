@@ -1,0 +1,34 @@
+package in.example.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class StudentController {
+//	private Student student;
+//	
+//	@Autowired
+//	public void setStudent(Student student) {
+//		this.student = student;
+//	}
+	private final Student student;
+	@Value("${app.collegeName}")
+	private String college;
+	
+	@Value("${app.batch}")
+	private String batch;
+	
+	public StudentController(Student student) {
+		this.student = student;
+	}
+	
+	@GetMapping("/")
+	@ResponseBody
+	public String getData(@RequestParam(defaultValue= "Rohit") String name) {
+		return student.getMessage(name, college, batch);
+	}
+}

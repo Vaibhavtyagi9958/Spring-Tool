@@ -1,0 +1,22 @@
+package in.example.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class StudentController {
+	private Student student;
+	
+	@Autowired
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+	
+	@GetMapping("/")
+	@ResponseBody
+	public String getData() {
+		return student.getMessage();
+	}
+}

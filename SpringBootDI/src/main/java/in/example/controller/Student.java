@@ -1,0 +1,10 @@
+package in.example.controller;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class Student {
+	public String getMessage(String name, String college, String batch) {
+		return "Hello This is msg from "+ name + " and College is " + college + " and batch is " + batch;
+	}
+}

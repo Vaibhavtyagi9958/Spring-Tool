@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="adr1" class="in.beans.Address">
+    	<property name="city" value="Modinagar" />
+    	<property name="pincode" value="201204" />
+    </bean>
+    <bean id="stu1" class="in.beans.Student">
+    	<property name="name" value="Ajay" />
+    	<property name="address" ref="adr1" />
+    </bean>
+
+</beans>

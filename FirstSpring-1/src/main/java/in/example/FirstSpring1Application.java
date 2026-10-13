@@ -1,0 +1,15 @@
+package in.example;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FirstSpring1Application {
+
+	public static void main(String[] args) {
+		System.out.println("before");
+		SpringApplication.run(FirstSpring1Application.class, args);
+		System.out.println("after");
+	}
+
+}
